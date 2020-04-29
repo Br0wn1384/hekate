@@ -316,7 +316,7 @@ void load_saved_configuration()
 {
 	LIST_INIT(ini_sections);
 
-	if (ini_parse(&ini_sections, "bootloader/hekate_ipl.ini", false))
+	if (ini_parse(&ini_sections, "NEXT/sys/ofw.ini", false))
 	{
 		// Load configuration.
 		LIST_FOREACH_ENTRY(ini_sec_t, ini_sec, &ini_sections, link)
