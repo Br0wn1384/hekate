@@ -590,7 +590,7 @@ void launch_firmware()
 
 	if (sd_mount())
 	{
-		if (ini_parse(&ini_sections, "bootloader/hekate_ipl.ini", false))
+		if (ini_parse(&ini_sections, "NEXT/sys/ofw.ini", false))
 		{
 			// Build configuration menu.
 			ment_t *ments = (ment_t *)malloc(sizeof(ment_t) * (max_entries + 6));
@@ -679,7 +679,7 @@ void launch_firmware()
 			free(ments);
 		}
 		else
-			EPRINTF("Could not open 'bootloader/hekate_ipl.ini'.\nMake sure it exists!");
+			EPRINTF("Could not open 'NEXT/sys/ofw.ini'.\nMake sure it exists!");
 	}
 
 	if (!cfg_sec)
@@ -840,10 +840,10 @@ static void _auto_launch_firmware()
 
 	if (sd_mount())
 	{
-		if (f_stat("bootloader/hekate_ipl.ini", NULL))
+		if (f_stat("NEXT/sys/ofw.ini", NULL))
 			create_config_entry();
 
-		if (ini_parse(&ini_sections, "bootloader/hekate_ipl.ini", false))
+		if (ini_parse(&ini_sections, "NEXT/sys/ofw.ini", false))
 		{
 			u32 configEntry = 0;
 			u32 boot_entry_id = 0;
