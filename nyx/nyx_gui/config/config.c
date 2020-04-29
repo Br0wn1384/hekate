@@ -65,7 +65,7 @@ int create_config_entry()
 
 	LIST_INIT(ini_sections);
 
-	if (ini_parse(&ini_sections, "bootloader/hekate_ipl.ini", false))
+	if (ini_parse(&ini_sections, "NEXT/sys/ofw.ini", false))
 		mainIniFound = true;
 	else
 	{
